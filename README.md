@@ -1,38 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚦 TrafficPulse
+
+Real-time AI-powered traffic cascade prevention system for Bangalore's Outer Ring Road (Silk Board → KR Puram).
+
+## Features
+
+- **Predictive Cascade Detection** — Graph-theoretic AI models identify systemic stress before it escalates
+- **Real-time Traffic Monitoring** — Live heatmap, stress scores, and speed tracking across 8 ORR junctions
+- **Multi-channel Alerts** — SMS (Twilio), Email (SMTP), Twitter, and push notifications
+- **AI-powered Interventions** — Google Gemini generates natural language recommendations
+- **Emergency Dispatch** — Optimized routing via OpenRoute Service for emergency vehicles
+- **Weather Integration** — Real-time weather impact analysis on traffic flow
+- **Role-based Access** — Admin and viewer roles with restricted views
+- **Corporate Dashboard** — WFH recommendations and shift timing suggestions
+
+## Tech Stack
+
+- **Frontend**: Next.js 16, React 19, TailwindCSS, Chart.js, Leaflet Maps
+- **Backend**: Next.js API Routes, Socket.IO
+- **Database**: MongoDB Atlas
+- **AI**: Google Gemini API
+- **APIs**: Google Maps, Mapbox, OpenRoute Service, WeatherAPI, Twilio, Twitter
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+
+- MongoDB Atlas account (or local MongoDB)
+
+### Setup
 
 ```bash
+# Install dependencies
+npm install
+
+# Copy environment variables
+cp example.env .env.local
+# Edit .env.local with your API keys
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the app.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Demo Credentials
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Email**: admin@traffic.com
+- **Password**: admin123
 
-## Learn More
+## Environment Variables
 
-To learn more about Next.js, take a look at the following resources:
+See `example.env` for all required configuration. Key services:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# traffic-pulse
-# traffic-pulse
+| Service     | Required | Purpose               |
+| ----------- | -------- | --------------------- |
+| MongoDB     | ✅       | Database              |
+| Google Maps | ✅       | Map visualization     |
+| Gemini AI   | ✅       | AI recommendations    |
+| Mapbox      | Optional | Alternative map tiles |
+| OpenRoute   | Optional | Emergency routing     |
+| WeatherAPI  | Optional | Weather integration   |
+| Twilio      | Optional | SMS alerts            |
+| SMTP        | Optional | Email alerts          |
+| Twitter     | Optional | Social media alerts   |
