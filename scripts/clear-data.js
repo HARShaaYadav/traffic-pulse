@@ -1,6 +1,6 @@
 const { MongoClient } = require('mongodb');
 
-const uri = process.env.MONGODB_URI || 'mongodb+srv://hackathon:FFerYnkdJL8CxYqn@chats.n87ayvp.mongodb.net/?appName=chats';
+const uri = process.env.MONGODB_URI || 'mongodb://localhost:27017';
 const dbName = process.env.MONGODB_DB_NAME || 'traffic-pulse';
 
 async function clearData() {
